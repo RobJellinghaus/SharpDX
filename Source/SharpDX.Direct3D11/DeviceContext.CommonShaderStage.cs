@@ -286,6 +286,11 @@ namespace SharpDX.Direct3D11
         /// <unmanaged>void PSSetShaderResources([In] UINT StartSlot,[In] UINT NumViews,[In, Buffer] const ID3D11ShaderResourceView** ppShaderResourceViews)</unmanaged>
         internal abstract void SetShaderResources(int startSlot, int numViews, IntPtr shaderResourceViewsRef);
 
+        public void SetShaderResourcesIntPtr(int startSlot, int numViews, IntPtr shaderResourceViewsRef)
+        {
+            SetShaderResources(startSlot, numViews, shaderResourceViewsRef);
+        }
+
         /// <summary>
         ///   Set an array of sampler states to the shader pipeline stage.
         /// </summary>
@@ -328,6 +333,11 @@ namespace SharpDX.Direct3D11
         }
 
         internal abstract void SetSamplers(int startSlot, int numSamplers, IntPtr samplersRef);
+
+        public void SetSamplersIntPtr(int startSlot, int numViews, IntPtr samplersRef)
+        {
+            SetShaderResources(startSlot, numViews, samplersRef);
+        }
 
         /// <summary>
         ///   Set the constant buffers used by the shader pipeline stage.
@@ -372,9 +382,19 @@ namespace SharpDX.Direct3D11
 
         internal abstract void SetConstantBuffers(int startSlot, int numBuffers, IntPtr constantBuffersRef);
 
+        public void SetConstantBuffersIntPtr(int startSlot, int numBuffers, IntPtr constantBuffersRef)
+        {
+            SetConstantBuffers(startSlot, numBuffers, constantBuffersRef);
+        }
+
         public abstract void SetShader(DeviceChild shader, SharpDX.Direct3D11.ClassInstance[] classInstancesOut, int numClassInstances);
 
         internal abstract void SetUnorderedAccessViews(int startSlot, int numBuffers, IntPtr unorderedAccessBuffer, IntPtr uavCount);
+
+        public void SetUnorderedAccessViewsIntPtr(int startSlot, int numBuffers, IntPtr unorderedAccessBuffer, IntPtr uavCount)
+        {
+            SetUnorderedAccessViews(startSlot, numBuffers, unorderedAccessBuffer, uavCount);
+        }
     }
 
     /// <summary>
