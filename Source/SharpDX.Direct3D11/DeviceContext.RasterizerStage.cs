@@ -215,5 +215,10 @@ namespace SharpDX.Direct3D11
         {
             SetViewports(count, (IntPtr)viewports);
         }
+
+        public void SetViewportsIntPtr(int count, IntPtr viewports)
+        {
+            SetViewports(count, viewports);
+        }
     }
 }
