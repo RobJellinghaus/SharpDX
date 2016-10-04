@@ -560,7 +560,7 @@ namespace SharpCli
                 CreateModuleInit(method);
             }
 
-            if (method.DeclaringType.Name == "Interop")
+            if (method.DeclaringType.Name == "Interop" || method.DeclaringType.Name == "Native")
             {
                 if (method.Name == "memcpy")
                 {
@@ -651,7 +651,7 @@ namespace SharpCli
                                 // Replace instruction
                                 ilProcessor.Replace(instruction, callIInstruction);
                             } 
-                            else if (methodDescription.DeclaringType.Name == "Interop")
+                            else if (methodDescription.DeclaringType.Name == "Interop" || method.DeclaringType.Name == "Native")
                             {
                                 if (methodDescription.FullName.Contains("Fixed"))
                                 {
