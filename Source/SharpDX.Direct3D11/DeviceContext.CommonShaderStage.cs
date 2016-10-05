@@ -336,7 +336,7 @@ namespace SharpDX.Direct3D11
 
         public void SetSamplersIntPtr(int startSlot, int numViews, IntPtr samplersRef)
         {
-            SetShaderResources(startSlot, numViews, samplersRef);
+            SetSamplers(startSlot, numViews, samplersRef);
         }
 
         /// <summary>
