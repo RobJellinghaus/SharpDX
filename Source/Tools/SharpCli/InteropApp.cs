@@ -651,7 +651,7 @@ namespace SharpCli
                                 // Replace instruction
                                 ilProcessor.Replace(instruction, callIInstruction);
                             } 
-                            else if (methodDescription.DeclaringType.Name == "Interop" || method.DeclaringType.Name == "Native")
+                            else if (methodDescription.DeclaringType.Name == "Interop" || methodDescription.DeclaringType.Name == "Native")
                             {
                                 if (methodDescription.FullName.Contains("Fixed"))
                                 {
